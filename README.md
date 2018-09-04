@@ -3,6 +3,8 @@
 # DataBase Setup
 
 ```
-Kartik Singh Chauhan
-
+create database sampleblogdb;
+create user samplebloguser identified by 'sampleblogpass';
+grant all privileges on sampleblogdb.* to samplebloguser;
+flush privileges;
 ```
