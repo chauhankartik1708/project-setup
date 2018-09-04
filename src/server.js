@@ -9,6 +9,6 @@ app.use(express.urlencoded({extended:true}))
 
 app.get('/',(req,res) => res.send('Hello Kartik Singh Chauhan'))
 
-app.listen(2929,() => {
-    console.log('Server started on port 2929')
-})
+module.exports = {
+    app
+}
