@@ -2,7 +2,7 @@ const models = require('../src/models/db')
 
 async function  seed() {
     try{
-        await models.db.sync({force:true})
+        await models.db.sync({force: true})
         
         await models.User.bulkCreate([
             {username:'firstuser',password:'firstpass'},
