@@ -9,4 +9,5 @@ grant all privileges on sampleblogdb.* to samplebloguser;
 flush privileges;
 ```
 
-##Made By Kartik Singh Chauhan
+```Made By Kartik Singh Chauhan
+```
