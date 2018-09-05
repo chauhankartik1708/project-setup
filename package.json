@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node src/run.js",
     "start:resetdb" : "FORCE_DB_RESET=true node src/run.js",
-    "seeddata":"node scrtipts/seed_sampledata.js"
+    "seeddata":"node scripts/seed_sampledata.js"
   },
   "author": "Kartik Chauhan",
   "license": "ISC",

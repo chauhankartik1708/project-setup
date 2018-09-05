@@ -22,8 +22,12 @@ async function createArticle(title,content,authorId){
 
 async function fetchArticles(){
 try{
-    return await Article.findAll()
-    return articles
+    return await Article.findAll({
+        include:[
+            {model:User,attributes:['username']}
+        ]
+    })
+    
 }catch(e){
     throw e
 }

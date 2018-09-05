@@ -11,7 +11,7 @@ const db = new Sequelize(
 
 const User = db.define('user', {
     username: {type: DT.STRING(30),unique:true,allowNull:false},
-    passwords:{type:DT.STRING,allowNull:false}
+    passwords:{type:DT.STRING,allowNull:true}
 })
 
 const Article = db.define('article',{
