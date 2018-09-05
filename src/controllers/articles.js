@@ -20,7 +20,16 @@ async function createArticle(title,content,authorId){
 
 }
 
+async function fetchArticles(){
+try{
+    const articles = await Article.findAll()
+    return articles
+}catch(e){
+    throw e
+}
+}
+
 
 module.exports = {
-    createArticle
+    createArticle,fetchArticles
 }
