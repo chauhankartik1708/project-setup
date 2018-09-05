@@ -1,4 +1,4 @@
-const {Article,User} = require('../models/db')
+const {Article,User,Comment} = require('../models/db')
 
 async function createArticle(title,content,authorId){
     if(typeof title != 'string' || title.length < 1){
@@ -33,7 +33,30 @@ try{
 }
 }
 
+async function fetchArticleById(articleId){
+    try{
+        return await Article.findById(articleId,{
+            include:[
+                {
+                    model:Comment,
+                    include:[
+                        {
+                            model:User,
+                            attributes:['username']
+                        }
+                        
+                    ]
+                }
+            ]
+        })
+    }catch(e){
+        throw e
+    }
+}
+
 
 module.exports = {
-    createArticle,fetchArticles
+    createArticle,
+    fetchArticles,
+    fetchArticleById
 }
