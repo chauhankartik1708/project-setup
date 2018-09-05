@@ -7,6 +7,7 @@ passport.deserializeUser(async(userId,done) => {
     try{
         const user = await User.findById(userId)
         user.password = undefined
+        return done(null,user)
     }catch(e){
         done(e)
     }

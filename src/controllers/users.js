@@ -9,3 +9,7 @@ async function createUser (username, password) {
     throw (e)
   }
 }
+
+module.exports = {
+  createUser
+}
