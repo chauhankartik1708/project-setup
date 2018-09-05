@@ -9,7 +9,7 @@ const db = new Sequelize(
     }
 )
 
-const User = db.define('user',{
+const User = db.define('user', {
     username: {type: DT.STRING(30),unique:true,allowNull:false},
     passwords:{type:DT.STRING,allowNull:false}
 })
@@ -35,7 +35,7 @@ const Comment = db.define('comment',{
 })
 
 Article.belongsTo(User,{as:'author'})
-User.hasMany(Article)
+User.hasMany(Article, {as:'author'})
 
 Comment.belongsTo(Article)
 Article.hasMany(Comment)
@@ -44,5 +44,8 @@ Comment.belongsTo(User)
 User.hasMany(Comment)
 
 module.exports = {
-    db
+    db,
+    User,
+    Comment,
+    Article
 }
