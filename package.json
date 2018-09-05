@@ -4,7 +4,9 @@
   "description": "NodeJS project setup",
   "main": "src/run.js",
   "scripts": {
-    "start": "node src/run.js"
+    "start": "node src/run.js",
+    "start:resetdb" : "FORCE_DB_RESET=true node src/run.js",
+    "seeddata":"node scrtipts/seed_sampledata.js"
   },
   "author": "Kartik Chauhan",
   "license": "ISC",
