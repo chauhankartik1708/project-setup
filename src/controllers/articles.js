@@ -11,7 +11,7 @@ async function createArticle(title,content,authorId){
         throw new Error('Author of article not defined')
     }
     try{
-        await Article.create({
+        return await Article.create({
             title,content,authorId
         })
     }catch(e){
@@ -22,7 +22,7 @@ async function createArticle(title,content,authorId){
 
 async function fetchArticles(){
 try{
-    const articles = await Article.findAll()
+    return await Article.findAll()
     return articles
 }catch(e){
     throw e
